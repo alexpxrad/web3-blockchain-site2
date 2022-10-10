@@ -49,6 +49,17 @@ export const TransactionProvider = ({ children }) => {
        
     }
 
+    // const checkIfTransactionsExist = async () = {
+    //     try {
+    //         const transactionContract = getEthereumContract(),
+    //         const transactionCount = await transactionContract.getTransactionCount(),
+
+    //         window.localStorage.setItem("transactionCount", transaction)
+    //     } catch (error) {
+            
+    //     }
+    // }
+
     const connectWallet = async () => {
         try {
             if(!ethereum) return alert ("Please install metamask");
@@ -107,6 +118,7 @@ settransactionCount(transactionCount.toNumber())
 
     useEffect(() => {
         checkIfWalletIsConnected();
+        //checkIfTransactionsExist();
     }, []);
 
     return (
